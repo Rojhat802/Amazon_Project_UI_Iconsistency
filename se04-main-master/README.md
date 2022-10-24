@@ -1,5 +1,7 @@
 # Inconsistency checker
 
+This project was taken with another 4 of my friends working with developers at amazon to tackle a big problem, UI inconsistency. 
+
 Inconsistency checker is a Chrome extension for finding UI inconsistencies on webpages. 
 
 Users can create, edit, download and upload templates, which are sets of CSS properties that define consistent elements.
