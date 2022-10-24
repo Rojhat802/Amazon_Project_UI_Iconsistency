@@ -1,0 +1,27 @@
+image: node
+
+stages:
+  - build
+  - test
+
+build-job:
+  tags:
+    - docker
+  stage: build
+  variables:
+    JS_PATH: "./extension/js"
+  script:
+    - echo "Hello world!"
+    - npm install
+    - npx eslint --fix "$JS_PATH"/tabs/
+    - npx eslint --fix "$JS_PATH"/global.js
+    - npx eslint --fix "$JS_PATH"/panel.js
+    - npx eslint --fix "$JS_PATH"/template.js
+    - npx eslint --fix "$JS_PATH"/values.js
+test-job:
+  tags:
+    - docker
+  stage: test
+  script:
+    - npm install
+    - npx mocha test
